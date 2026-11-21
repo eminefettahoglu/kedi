@@ -233,22 +233,32 @@
         .author-header {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 28px;
             margin-bottom: 25px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--border-gray);
         }
 
         .author-avatar {
-            width: 75px;
-            height: 75px;
+            width: 88px;
+            height: 88px;
             border-radius: 50%;
             background-color: var(--card-hover);
             border: 1px solid var(--accent-silver);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
             flex-shrink: 0;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .author-title-group {
+            padding-left: 6px;
         }
 
         .author-details {
@@ -457,14 +467,9 @@
             <div class="author-card">
                 <div class="author-header">
                     <div class="author-avatar">
-                        <!-- Minimalist Akademik / Kedi Sembolü -->
-                        <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#f5f5f5" stroke-width="1.6">
-                            <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z"/>
-                            <circle cx="9" cy="13" r="1" fill="#f5f5f5"/>
-                            <circle cx="15" cy="13" r="1" fill="#f5f5f5"/>
-                        </svg>
+                        <img src="profil.jpg" alt="Emine Fettahoğlu">
                     </div>
-                    <div>
+                    <div class="author-title-group">
                         <h2 style="border:none; margin:0; padding:0;">Yazar Hakkında</h2>
                         <p style="color: var(--text-gray); font-size: 0.9rem;">Site Geliştiricisi ve İçerik Yazarı</p>
                     </div>
