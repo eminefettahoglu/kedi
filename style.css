@@ -559,3 +559,95 @@ footer {
         height: 68px;
     }
 }
+/* Siteye Giriş Kedi Ekranı */
+.intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background-color: var(--bg-black);
+    overflow: hidden;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.intro-screen.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-cat-stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.intro-welcome-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    pointer-events: none;
+}
+
+.intro-welcome-title {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 700;
+    color: var(--text-white);
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.intro-welcome-hint {
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+.runner-cat {
+    position: absolute;
+    bottom: 12%;
+    left: 0;
+    width: 92px;
+    height: 92px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.65));
+    animation:
+        catRunAcross var(--run-duration, 7s) linear infinite,
+        catHop var(--hop-duration, 0.55s) ease-in-out infinite;
+    animation-delay: var(--run-delay, 0s), var(--hop-delay, 0s);
+}
+
+.runner-cat:hover {
+    transform: scale(1.12);
+}
+
+.runner-cat svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@keyframes catRunAcross {
+    0% {
+        left: -110px;
+    }
+    100% {
+        left: calc(100% + 110px);
+    }
+}
+
+@keyframes catHop {
+    0%, 100% {
+        margin-bottom: 0;
+    }
+    50% {
+        margin-bottom: var(--hop-height, 36px);
+    }
+}
